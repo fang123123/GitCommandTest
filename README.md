@@ -20,6 +20,8 @@
 
 ### 基础命令
 
+![img](http://kmknkk.oss-cn-beijing.aliyuncs.com/image/git.jpg)
+
 ```powershell
 # 拉取
 git pull
@@ -97,7 +99,11 @@ git push origin master -f
 
 
 
-git reset需要注意的三个参数
+### git reset
+
+--soft 可以撤销commit操作
+
+--mixed(可以省略) 可以撤销add 操作
 
 --hard 慎用，会清空当前work directory中的内容，即你本地当前的内容
 
@@ -109,5 +115,27 @@ git reset需要注意的三个参数
 
 ```
 git reset commitId
+```
+
+
+
+
+
+### 分支
+
+```powershell
+# 查看当前分支
+git branch
+# 查看远程分支
+git branch -r
+# 新建分支
+git branch myBranch
+# 切换到分支
+git checkout myBranch
+# 在当前分支上合并其他分支
+git checkout master
+git merge myBranch
+# 删除分支
+git branch -d myBranch
 ```
 
