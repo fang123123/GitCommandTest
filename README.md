@@ -139,3 +139,20 @@ git merge myBranch
 git branch -d myBranch
 ```
 
+
+### 冲突解决
+
+当进行分支合并时，如果出现代码冲突，就需要进行冲突解决
+即当使用命令 `git merge myBranch`后，出现 `CONFLICT (content): Merge conflict in xx.txt`
+就表示在xx.txt文件上出现冲突
+打开冲突文件，会发现下面的代码
+```
+# 这里面就是两个版本冲突的地方，然后在这里修改解决冲突
+<<<<<<< HEAD
+Creating a new branch is quick & simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> feature1
+```
+
+修改之后使用 `git add xx.txt` 将修改后的文件重新添加到index，然后和其他没有冲突的文件一起commit，然后push
